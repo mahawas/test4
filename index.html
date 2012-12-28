@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Last.FM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- disable BlackBerry UI events -->
+    <meta name="touch-event-mode" value="native">
+    <meta name="cursor-event-mode" value="native">
+    <!-- disables address sniffing -->
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <link rel="stylesheet" href="mh5.css"/>
+    <link rel="stylesheet"href="colors.css"/>
+    <link rel="stylesheet" href="lastfm.css"/>
+</head>
+<body class="mh5_hwacc_body">
+
+    <script src="../../lib/mh5.js"></script>
+    <script src="LastFmSearchAdapter.js"></script>
+    <script src="SplashPage.js"></script>
+    <script src="LandingPage.js"></script>
+    <script src="ArtistPage.js"></script>
+
+    <script>
+        nokia.mh5.assetsPath = "./";
+
+        nokia.mh5.app.embed({
+            appId: "demo_wwzrmoloHAFVvyW",
+            appCode: "Vgl_08RQWnjJo92Lw1F_uQ",
+            hideAddressBar: true,
+            layouts: ["lastFMLayout"],
+            lastFMLayout: {
+                controller: nokia.mh5.app.controller,
+                pages: ["splash", "landing", "artist"],
+                splash: lastfm.SplashPage,
+                landing: lastfm.LandingPage,
+                artist: lastfm.ArtistPage
+            }
+        });
+    </script>
+</body>
+</html>
+
